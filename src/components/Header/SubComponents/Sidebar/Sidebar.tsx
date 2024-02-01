@@ -8,7 +8,6 @@ import { useClickOutside } from '@/hooks/useOnClickOutside'
 interface SidebarProps {
   navItems: string[]
 }
-
 const Sidebar = ({ navItems }: SidebarProps) => {
   const [showSidebar, setShowSidebar] = useState(false)
   const closeButtonRef = useRef<HTMLButtonElement | null>(null)
