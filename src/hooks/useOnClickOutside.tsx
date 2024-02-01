@@ -19,15 +19,10 @@ export const useClickOutside = (
     if (refs.length === 0) {
       return
     }
-
-    if (typeof window !== 'undefined') {
-      document.addEventListener('mousedown', handleClickOutside)
-    }
+    document.addEventListener('mousedown', handleClickOutside)
 
     return () => {
-      if (typeof window !== 'undefined') {
-        document.removeEventListener('mousedown', handleClickOutside)
-      }
+      document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [refs, handleClickOutside])
 }
