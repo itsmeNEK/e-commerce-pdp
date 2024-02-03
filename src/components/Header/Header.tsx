@@ -11,7 +11,7 @@ import BrandSvgIcon from '@/components/common/svg/BrandSvgIcon'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 export default function Header() {
-  const isMobile = useMediaQuery(678)
+  const isMobile = useMediaQuery(765)
   const navItems = ['Collections', 'Men', 'Women', 'About', 'Contact']
   return (
     <header className={`${Style.header} ${isMobile && Style.header__mobile}`}>

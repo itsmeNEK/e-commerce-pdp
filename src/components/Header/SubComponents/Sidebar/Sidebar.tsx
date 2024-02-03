@@ -26,13 +26,11 @@ const Sidebar = ({ navItems }: SidebarProps) => {
         ref={closeButtonRef}
         type='button'
         onClick={handleButtonClick}
-        aria-label='Close Button'
+        aria-label='Menu Button'
       >
         <MenuIcon aria-hidden />
       </IconButton>
-      <div
-        className={`${Style.sidebar_overlay} ${showSidebar && Style.menu_open}`}
-      ></div>
+      {showSidebar && <div className={Style.sidebar_overlay}></div>}
       <div
         className={`${Style.sidebar_container} ${showSidebar && Style.menu_open}`}
         ref={sidebarRef}

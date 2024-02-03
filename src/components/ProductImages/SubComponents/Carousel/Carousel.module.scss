@@ -1,0 +1,57 @@
+.carousel_container {
+  display: flex;
+  position: relative;
+
+  &__content {
+    flex: 3;
+    text-align: center;
+  }
+  .prev_button,
+  .next_button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:hover {
+      svg {
+        path {
+          stroke: var(--orange);
+        }
+      }
+    }
+  }
+  .prev_button {
+    left: 1rem;
+    padding-left: 2px;
+  }
+  .next_button {
+    right: 1rem;
+    padding-right: 4px;
+  }
+  .prev_button_lightbox {
+    left: -1.8rem;
+    padding-left: 2px;
+    width: 55px;
+    height: 55px;
+  }
+  .next_button_lightbox {
+    right: -1.8rem;
+    padding-right: 4px;
+    width: 55px;
+    height: 55px;
+  }
+
+  .large_image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &.carousel_mobile {
+    .large_image {
+      border-radius: 0;
+    }
+  }
+}

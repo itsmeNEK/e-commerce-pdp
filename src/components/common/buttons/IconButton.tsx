@@ -6,7 +6,7 @@ import {
 } from 'react'
 import Style from './IconButton.module.scss'
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode
   className?: string
 }
@@ -28,7 +28,6 @@ const IconButton = forwardRef(
   }
 )
 
-// Adding displayName for the component
 IconButton.displayName = 'IconButton'
 
 export default IconButton

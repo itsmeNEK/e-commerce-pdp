@@ -8,7 +8,7 @@ import { useClickOutside } from '@/hooks/useOnClickOutside'
 export default function CartCard() {
   const [showCart, setShowCart] = useState(false)
   const isDesktop = useMediaQuery(1440)
-  const isMobile = useMediaQuery(678)
+  const isMobile = useMediaQuery(765)
   const [cartCount] = useState<number>(0)
   const cartCardRef = useRef<HTMLDivElement>(null)
   const cartButtonRef = useRef<HTMLButtonElement | null>(null)
