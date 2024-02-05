@@ -6,7 +6,7 @@ import PrevSvgIcon from '@/components/common/svg/PrevSvgIcon'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { TImage } from '@/types/Cart'
 
-type Props = {
+type CarouselProps = {
   selectedIndex: number
   images: TImage[]
   lightBox?: boolean
@@ -20,8 +20,8 @@ export default function Carousel({
   images,
   handleIndexChange,
   handleLightBox,
-}: Props) {
-  const isMobile = useMediaQuery(765)
+}: CarouselProps) {
+  const isDesktop = useMediaQuery(765)
   const handleNextClick = () => {
     handleIndexChange(1)
   }
@@ -30,12 +30,12 @@ export default function Carousel({
   }
   return (
     <div
-      className={`${Style.carousel_container} ${isMobile && Style.carousel_mobile}`}
+      className={`${Style['carousel-container']} ${isDesktop && Style['carousel-desktop']}`}
     >
-      {(isMobile || lightBox) && (
+      {(!isDesktop || lightBox) && (
         <NavigationButton
           type='button'
-          className={`${Style.prev_button} ${lightBox && Style.prev_button_lightbox}`}
+          className={`${Style['prev-button']} ${lightBox && Style['prev-button--lightbox']}`}
           aria-label='Prev Button'
           onClick={handlePrevClick}
         >
@@ -47,14 +47,14 @@ export default function Carousel({
         priority
         width={500}
         height={700}
-        className={Style.large_image}
+        className={Style['large-image']}
         src={images[selectedIndex]?.image as string}
         alt={images[selectedIndex]?.alt as string}
       />
-      {(isMobile || lightBox) && (
+      {(!isDesktop || lightBox) && (
         <NavigationButton
           type='button'
-          className={`${Style.next_button} ${lightBox && Style.next_button_lightbox}`}
+          className={`${Style['next-button']} ${lightBox && Style['next-button--lightbox']}`}
           aria-label='Next Button'
           onClick={handleNextClick}
         >

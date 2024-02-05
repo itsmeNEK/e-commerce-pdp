@@ -1,4 +1,4 @@
-.grind_images_container {
+.grid-images-container {
   margin-top: 2rem;
   position: relative;
   gap: 1rem;
@@ -13,7 +13,7 @@
     border: 2px solid transparent;
     margin: 0 2.5%;
 
-    &__selected,
+    &--active,
     &:hover {
       border: 2px solid var(--orange);
       cursor: pointer;

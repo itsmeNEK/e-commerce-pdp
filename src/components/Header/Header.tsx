@@ -11,23 +11,25 @@ import BrandSvgIcon from '@/components/common/svg/BrandSvgIcon'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 export default function Header() {
-  const isMobile = useMediaQuery(765)
+  const isDesktop = useMediaQuery(765)
   const navItems = ['Collections', 'Men', 'Women', 'About', 'Contact']
   return (
-    <header className={`${Style.header} ${isMobile && Style.header__mobile}`}>
-      <div className={Style.brand_nav_container}>
-        {isMobile && <Sidebar navItems={navItems} />}
+    <header
+      className={`${Style['header']} ${isDesktop && Style['header--desktop']}`}
+    >
+      <div className={Style['brand-nav-container']}>
+        {!isDesktop && <Sidebar navItems={navItems} />}
         <Link href='/' aria-label='Home'>
           <BrandSvgIcon aria-hidden />
         </Link>
-        {!isMobile && <NavItems navItems={navItems} />}
+        {isDesktop && <NavItems navItems={navItems} />}
       </div>
 
-      <div className={Style.cart_avatar_container}>
+      <div className={Style['cart-avatar-container']}>
         <CartCard />
         <Image
           priority
-          className={Style.cart_avatar_container__avatar}
+          className={Style['cart-avatar-container__avatar']}
           src={Avatar}
           alt='user-avatar'
         />

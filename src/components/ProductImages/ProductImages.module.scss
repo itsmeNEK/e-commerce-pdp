@@ -1,7 +1,7 @@
-.product_images_container {
-  width: 40%;
+.product-images-container {
+  width: 100%;
 
-  &__mobile {
-    width: 100%;
+  &--desktop {
+    width: 40%;
   }
 }

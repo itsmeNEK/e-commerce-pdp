@@ -7,8 +7,7 @@ import { useClickOutside } from '@/hooks/useOnClickOutside'
 
 export default function CartCard() {
   const [showCart, setShowCart] = useState(false)
-  const isDesktop = useMediaQuery(1440)
-  const isMobile = useMediaQuery(765)
+  const isDesktop = useMediaQuery(765)
   const [cartCount] = useState<number>(0)
   const cartCardRef = useRef<HTMLDivElement>(null)
   const cartButtonRef = useRef<HTMLButtonElement | null>(null)
@@ -26,25 +25,24 @@ export default function CartCard() {
       <IconButton
         ref={cartButtonRef}
         type='button'
-        className={Style.cart_button}
+        className={Style['cart-button']}
         aria-label='Cart Button'
         onClick={handleShowCart}
       >
         {cartCount > 0 && (
-          <span className={Style.cart_button__count}>{cartCount}</span>
+          <span className={Style['cart-button__count']}>{cartCount}</span>
         )}
         <CartSvgIcon aria-hidden />
       </IconButton>
       {showCart && (
         <div
           ref={cartCardRef}
-          className={`${Style.cart_card} 
-          ${isDesktop && Style.cart_card__desktop_view}
-          ${isMobile && Style.cart_card__mobile_view}
+          className={`${Style['cart-card']} 
+          ${isDesktop && Style['cart-card--desktop']}
           `}
         >
-          <span className={Style.cart_card__title}>Cart</span>
-          <div className={Style.cart_card__body}>
+          <span className={Style['cart-card__title']}>Cart</span>
+          <div className={Style['cart-card__body']}>
             {cartCount >= 1 ? (
               <span>cart items</span>
             ) : (

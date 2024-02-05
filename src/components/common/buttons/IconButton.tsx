@@ -6,14 +6,14 @@ import {
 } from 'react'
 import Style from './IconButton.module.scss'
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode
   className?: string
 }
 
 const IconButton = forwardRef(
   (
-    { children, className, ...props }: ButtonProps,
+    { children, className, ...props }: IconButtonProps,
     ref: ForwardedRef<HTMLButtonElement>
   ) => {
     return (

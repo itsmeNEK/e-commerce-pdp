@@ -1,4 +1,4 @@
-.carousel_container {
+.carousel-container {
   display: flex;
   position: relative;
 
@@ -6,8 +6,8 @@
     flex: 3;
     text-align: center;
   }
-  .prev_button,
-  .next_button {
+  .prev-button,
+  .next-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -20,38 +20,37 @@
       }
     }
   }
-  .prev_button {
+  .prev-button {
     left: 1rem;
     padding-left: 2px;
   }
-  .next_button {
+  .next-button {
     right: 1rem;
     padding-right: 4px;
   }
-  .prev_button_lightbox {
+  .prev-button--lightbox {
     left: -1.8rem;
     padding-left: 2px;
     width: 55px;
     height: 55px;
   }
-  .next_button_lightbox {
+  .next-button--lightbox {
     right: -1.8rem;
     padding-right: 4px;
     width: 55px;
     height: 55px;
   }
 
-  .large_image {
+  .large-image {
     width: 100%;
     height: auto;
-    border-radius: 15px;
     &:hover {
       cursor: pointer;
     }
   }
-  &.carousel_mobile {
-    .large_image {
-      border-radius: 0;
+  &.carousel-desktop {
+    .large-image {
+      border-radius: 15px;
     }
   }
 }

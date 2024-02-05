@@ -11,7 +11,7 @@ import usePressKeysImages from '@/hooks/usePressKeysImages'
 export default function ProductImages() {
   const { smallImages, largeImages } = useCartContext()
   const [selectedIndex, setSelectedIndex] = useState(0)
-  const isMobile = useMediaQuery(765)
+  const isDesktop = useMediaQuery(765)
   const [showLightBox, setShowLightBox] = useState(false)
 
   const handleSelectIndex = (index: number) => {
@@ -49,7 +49,7 @@ export default function ProductImages() {
 
   return (
     <section
-      className={`${Style.product_images_container} ${isMobile && Style.product_images_container__mobile}`}
+      className={`${Style['product-images-container']} ${isDesktop && Style['product-images-container--desktop']}`}
     >
       {largeImages?.length > 0 && (
         <Carousel
@@ -59,14 +59,14 @@ export default function ProductImages() {
           images={largeImages}
         />
       )}
-      {!isMobile && (
+      {isDesktop && (
         <GridImages
           selectedIndex={selectedIndex}
           images={smallImages}
           handleSelectIndex={handleSelectIndex}
         />
       )}
-      {!isMobile && showLightBox && (
+      {isDesktop && showLightBox && (
         <LightBox handleClose={handleClose}>
           {largeImages?.length > 0 && (
             <>

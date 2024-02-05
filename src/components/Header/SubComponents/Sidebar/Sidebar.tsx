@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React, { useRef, useState } from 'react'
 import Style from './Sidebar.module.scss'
 import IconButton from '@/components/common/buttons/IconButton'
@@ -30,22 +31,24 @@ const Sidebar = ({ navItems }: SidebarProps) => {
       >
         <MenuIcon aria-hidden />
       </IconButton>
-      {showSidebar && <div className={Style.sidebar_overlay}></div>}
+      {showSidebar && <div className={Style['sidebar-overlay']}></div>}
       <div
-        className={`${Style.sidebar_container} ${showSidebar && Style.menu_open}`}
+        className={`${Style['sidebar-container']} ${showSidebar && Style['menu-open']}`}
         ref={sidebarRef}
       >
         <IconButton
           type='button'
-          className={Style.close_button}
+          className={Style['close-button']}
           onClick={handleButtonClick}
           aria-label='Close Button'
         >
           <CloseSvgIcon aria-hidden />
         </IconButton>
         <ul>
-          {navItems.map((item: string) => (
-            <li key={item}>{item}</li>
+          {navItems.map((item: string, index: number) => (
+            <li key={index}>
+              <Link href={`/#${item}`}>{item}</Link>
+            </li>
           ))}
         </ul>
       </div>
