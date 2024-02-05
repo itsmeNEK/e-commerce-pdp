@@ -2,13 +2,14 @@ import { useRef, useState } from 'react'
 import Style from './CartCard.module.scss'
 import IconButton from '@/components/common/buttons/IconButton'
 import CartSvgIcon from '@/components/common/svg/CartSvgIcon'
+import { useCartContext } from '@/context/cartContext'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { useClickOutside } from '@/hooks/useOnClickOutside'
 
 export default function CartCard() {
   const [showCart, setShowCart] = useState(false)
   const isDesktop = useMediaQuery(765)
-  const [cartCount] = useState<number>(0)
+  const { cartItems } = useCartContext()
   const cartCardRef = useRef<HTMLDivElement>(null)
   const cartButtonRef = useRef<HTMLButtonElement | null>(null)
 
@@ -29,13 +30,16 @@ export default function CartCard() {
         aria-label='Cart Button'
         onClick={handleShowCart}
       >
-        {cartCount > 0 && (
-          <span className={Style['cart-button__count']}>{cartCount}</span>
+        {cartItems.length > 0 && (
+          <span className={Style['cart-button__count']}>
+            {cartItems.length}
+          </span>
         )}
         <CartSvgIcon aria-hidden />
       </IconButton>
       {showCart && (
         <div
+          title='Cart Card'
           ref={cartCardRef}
           className={`${Style['cart-card']} 
           ${isDesktop && Style['cart-card--desktop']}
@@ -43,7 +47,7 @@ export default function CartCard() {
         >
           <span className={Style['cart-card__title']}>Cart</span>
           <div className={Style['cart-card__body']}>
-            {cartCount >= 1 ? (
+            {cartItems.length > 0 ? (
               <span>cart items</span>
             ) : (
               <span>Your cart is empty.</span>

@@ -33,6 +33,7 @@ const Sidebar = ({ navItems }: SidebarProps) => {
       </IconButton>
       {showSidebar && <div className={Style['sidebar-overlay']}></div>}
       <div
+        title='sidebar'
         className={`${Style['sidebar__container']} ${showSidebar && Style['menu-open']}`}
         ref={sidebarRef}
       >

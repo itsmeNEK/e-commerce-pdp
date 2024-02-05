@@ -28,7 +28,7 @@ export default function ProductImages() {
     [largeImages]
   )
   const handleClose = (val?: boolean) => {
-    if (val === false) {
+    if (val === false || !isDesktop) {
       return setShowLightBox(false)
     }
     setShowLightBox(!showLightBox)

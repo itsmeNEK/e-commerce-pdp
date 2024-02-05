@@ -14,10 +14,14 @@ export default function LightBox({ children, handleClose }: LightBoxProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   useClickOutside([containerRef, closeButtonRef], handleClose)
   return (
-    <div className={Style['lightbox']}>
-      <div ref={containerRef} className={Style['lightbox__container']}>
+    <div className={Style['light-box']}>
+      <div
+        ref={containerRef}
+        className={Style['light-box__container']}
+        title='Light Box'
+      >
         <IconButton
-          className={Style['lightbox__container__close']}
+          className={Style['light-box__container__close']}
           ref={closeButtonRef}
           type='button'
           onClick={handleClose}

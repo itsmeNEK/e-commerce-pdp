@@ -1,6 +1,11 @@
-.icon_button {
+.icon-button {
   background-color: transparent;
   border: none;
   padding: 0;
-  margin-bottom: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    cursor: pointer;
+  }
 }

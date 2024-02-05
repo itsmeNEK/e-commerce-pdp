@@ -19,7 +19,7 @@ const IconButton = forwardRef(
     return (
       <button
         ref={ref}
-        className={`${className} ${Style.icon_button}`}
+        className={`${className} ${Style['icon-button']}`}
         {...props}
       >
         {children}

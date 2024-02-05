@@ -33,7 +33,7 @@ export default function Carousel({
       {(!isDesktop || lightBox) && (
         <IconButton
           type='button'
-          className={`${Style['prev-button']} ${lightBox && Style['prev-button--lightbox']}`}
+          className={`${Style['prev-button']} ${lightBox && Style['prev-button--light-box']}`}
           aria-label='Prev Button'
           onClick={handlePrevClick}
         >
@@ -48,11 +48,12 @@ export default function Carousel({
         className={Style['large-image']}
         src={images[selectedIndex]?.image as string}
         alt={images[selectedIndex]?.alt as string}
+        title='Product Image Large'
       />
       {(!isDesktop || lightBox) && (
         <IconButton
           type='button'
-          className={`${Style['next-button']} ${lightBox && Style['next-button--lightbox']}`}
+          className={`${Style['next-button']} ${lightBox && Style['next-button--light-box']}`}
           aria-label='Next Button'
           onClick={handleNextClick}
         >

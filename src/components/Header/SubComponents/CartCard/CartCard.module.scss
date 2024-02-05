@@ -1,7 +1,6 @@
 .cart-button {
   svg {
     &:hover {
-      cursor: pointer;
       path {
         fill: var(--black);
       }
@@ -11,8 +10,8 @@
     background-color: var(--orange);
     display: flex;
     position: absolute;
-    margin-top: -10px;
-    margin-left: 10px;
+    margin-top: -20px;
+    margin-left: 15px;
     padding: 1px 9px;
     border-radius: 15px;
     font-weight: 700;
