@@ -32,9 +32,7 @@ export default function CartCard() {
         onClick={handleShowCart}
       >
         {cartItems.length > 0 && (
-          <span className={Style['cart-button__count']}>
-            {cartItems.length}
-          </span>
+          <span className={Style.cart_button__count}>{cartItems.length}</span>
         )}
         <CartSvgIcon aria-hidden />
       </PrimaryButton>
@@ -46,8 +44,8 @@ export default function CartCard() {
           ${isDesktop && Style['cart-card--desktop']}
           `}
         >
-          <span className={Style['cart-card__title']}>Cart</span>
-          <div className={Style['cart-card__body']}>
+          <span className={Style.cart_card__title}>Cart</span>
+          <div className={Style.cart_card__body}>
             {cartItems.length > 0 ? (
               <CartItems cartItems={cartItems} />
             ) : (
