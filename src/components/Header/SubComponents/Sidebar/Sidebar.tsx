@@ -31,7 +31,7 @@ const Sidebar = ({ navItems }: SidebarProps) => {
       >
         <MenuIcon aria-hidden />
       </PrimaryButton>
-      {showSidebar && <div className={Style['sidebar-overlay']}></div>}
+      {showSidebar && <div className={Style['sidebar__overlay']}></div>}
       <div
         data-testid='sidebar'
         className={`${Style['sidebar__container']} ${showSidebar && Style['menu-open']}`}
