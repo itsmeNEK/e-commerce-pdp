@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import CartItems from '../CartItems/CartItems'
 import Style from './CartCard.module.scss'
 import PrimaryButton from '@/components/common/buttons/PrimaryButton'
 import CartSvgIcon from '@/components/common/svg/CartSvgIcon'
@@ -48,7 +49,7 @@ export default function CartCard() {
           <span className={Style['cart-card__title']}>Cart</span>
           <div className={Style['cart-card__body']}>
             {cartItems.length > 0 ? (
-              <span>cart items</span>
+              <CartItems cartItems={cartItems} />
             ) : (
               <span>Your cart is empty.</span>
             )}

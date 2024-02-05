@@ -28,4 +28,5 @@ export type TCart = TImages & {
   product: TProduct
   cartItems: TCartItems[]
   addToCart: (product: TProduct, quantity: number) => void
+  deleteToCart: (productId: number) => void
 }
