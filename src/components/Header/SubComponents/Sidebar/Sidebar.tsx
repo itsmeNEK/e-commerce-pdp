@@ -22,7 +22,7 @@ const Sidebar = ({ navItems }: SidebarProps) => {
   }
   useClickOutside([closeButtonRef, sidebarRef], handleClickOutside)
   return (
-    <>
+    <aside className={Style['sidebar']}>
       <IconButton
         ref={closeButtonRef}
         type='button'
@@ -33,7 +33,7 @@ const Sidebar = ({ navItems }: SidebarProps) => {
       </IconButton>
       {showSidebar && <div className={Style['sidebar-overlay']}></div>}
       <div
-        className={`${Style['sidebar-container']} ${showSidebar && Style['menu-open']}`}
+        className={`${Style['sidebar__container']} ${showSidebar && Style['menu-open']}`}
         ref={sidebarRef}
       >
         <IconButton
@@ -52,7 +52,7 @@ const Sidebar = ({ navItems }: SidebarProps) => {
           ))}
         </ul>
       </div>
-    </>
+    </aside>
   )
 }
 

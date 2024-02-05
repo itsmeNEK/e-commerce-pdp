@@ -8,15 +8,15 @@ export type TImages = {
   largeImages: TImage[]
 }
 export type TProduct = {
-  id?: number
-  company?: string
-  title?: string
-  description?: string
-  price?: number
-  discount?: number
-  thumbnail?: {
-    image?: string
-    alt?: string
+  id: number
+  company: string
+  title: string
+  description: string
+  price: number
+  discount: number
+  thumbnail: {
+    image: string
+    alt: string
   }
 }
 

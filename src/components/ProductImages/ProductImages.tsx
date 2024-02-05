@@ -48,9 +48,7 @@ export default function ProductImages() {
   })
 
   return (
-    <section
-      className={`${Style['product-images-container']} ${isDesktop && Style['product-images-container--desktop']}`}
-    >
+    <section className={Style['product-images-container']}>
       {largeImages?.length > 0 && (
         <Carousel
           handleLightBox={handleClose}
