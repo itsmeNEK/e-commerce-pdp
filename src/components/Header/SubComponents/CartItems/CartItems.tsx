@@ -37,7 +37,7 @@ export default function CartItems({ cartItems }: Props) {
     deleteToCart(productId)
   }
   return (
-    <section className={Style['container']}>
+    <section className={Style['container']} title='Cart Items'>
       {cartItems.map((item: TCartItems, index: number) => {
         return (
           <div className={Style['cart-item']} key={index}>
