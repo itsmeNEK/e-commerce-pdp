@@ -9,7 +9,18 @@ jest.mock('../context/cartContext')
 jest.mock('../hooks/useMediaQuery', () => ({
   useMediaQuery: jest.fn(() => true),
 }))
-
+const mockCartItem: TCartItems = {
+  product: {
+    id: 1,
+    company: 'Sneaker Company',
+    title: 'Test Product',
+    description: 'Test Description',
+    price: 100,
+    discount: 0.5,
+    thumbnail: { image: '', alt: '' },
+  },
+  quantity: 1,
+}
 describe('Header component', () => {
   beforeEach(() => {
     useCartContext.mockReturnValue({
@@ -80,18 +91,6 @@ describe('Header component', () => {
   })
 
   it('mocks cartItems for CartItems component and check if cart item is in the document', () => {
-    const mockCartItem: TCartItems = {
-      product: {
-        id: 1,
-        company: 'Sneaker Company',
-        title: 'Test Product',
-        description: 'Test Description',
-        price: 100,
-        discount: 0.5,
-        thumbnail: { image: '', alt: '' },
-      },
-      quantity: 1,
-    }
     useCartContext.mockReturnValue({
       cartItems: [mockCartItem],
     })
@@ -104,18 +103,6 @@ describe('Header component', () => {
     expect(cartItems).toBeInTheDocument()
   })
   it('check if cart item is in the document clicking Delete Button calls deleteToCart', () => {
-    const mockCartItem: TCartItems = {
-      product: {
-        id: 1,
-        company: 'Sneaker Company',
-        title: 'Test Product',
-        description: 'Test Description',
-        price: 100,
-        discount: 0.5,
-        thumbnail: { image: '', alt: '' },
-      },
-      quantity: 1,
-    }
     useCartContext.mockReturnValue({
       cartItems: [mockCartItem],
       deleteToCart: jest.fn(),
