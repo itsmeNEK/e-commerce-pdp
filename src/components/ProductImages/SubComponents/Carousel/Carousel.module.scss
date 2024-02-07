@@ -1,0 +1,68 @@
+.carousel-container {
+  display: flex;
+  position: relative;
+
+  &__content {
+    flex: 3;
+    text-align: center;
+  }
+  .prev-button,
+  .next-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: var(--white);
+    border-radius: 50%;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    svg {
+      align-items: center;
+      justify-content: center;
+    }
+    &:hover {
+      svg {
+        path {
+          stroke: var(--orange);
+        }
+      }
+    }
+  }
+  .prev-button {
+    left: 1rem;
+    padding-right: 2px;
+  }
+  .next-button {
+    right: 1rem;
+    padding-left: 2px;
+  }
+  .prev-button--lightbox {
+    left: -1.8rem;
+    width: 55px;
+    height: 55px;
+    padding-right: 4px;
+  }
+  .next-button--lightbox {
+    right: -1.8rem;
+    padding-left: 2px;
+    width: 55px;
+    height: 55px;
+  }
+
+  .large-image {
+    width: 100%;
+    height: auto;
+    &:hover {
+      cursor: pointer;
+    }
+
+    @media screen and (min-width: 765px) {
+      border-radius: 15px;
+    }
+  }
+}

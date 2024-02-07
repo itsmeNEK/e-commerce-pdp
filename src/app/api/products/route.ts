@@ -12,55 +12,57 @@ export async function GET() {
         discount: 0.5,
         thumbnail: {
           image:
-            'https://res.cloudinary.com/dtnvsv2dx/image/upload/v1706533949/e-commerce-pdp/image-product-1-thumbnail.jpg',
+            'https://res.cloudinary.com/dtnvsv2dx/image/upload/f_auto,q_auto/v1/e-commerce-pdp/image-product-1-thumbnail',
           alt: 'Shoes top & bottom',
         },
         images: [
           {
             image:
-              'https://res.cloudinary.com/dtnvsv2dx/image/upload/v1706533949/e-commerce-pdp/image-product-1-thumbnail.jpg',
+              'https://res.cloudinary.com/dtnvsv2dx/image/upload/f_auto,q_auto/v1/e-commerce-pdp/image-product-1-thumbnail',
+
             alt: 'Shoes top & bottom',
             small: true,
           },
           {
             image:
-              'https://res.cloudinary.com/dtnvsv2dx/image/upload/v1706533950/e-commerce-pdp/image-product-2-thumbnail.jpg',
+              'https://res.cloudinary.com/dtnvsv2dx/image/upload/f_auto,q_auto/v1/e-commerce-pdp/image-product-2-thumbnail',
             alt: 'Shoes on a rock',
             small: true,
           },
           {
             image:
-              'https://res.cloudinary.com/dtnvsv2dx/image/upload/v1706533950/e-commerce-pdp/image-product-3-thumbnail.jpg',
+              'https://res.cloudinary.com/dtnvsv2dx/image/upload/f_auto,q_auto/v1/e-commerce-pdp/image-product-3-thumbnail',
             alt: 'A shoe on a rock top view',
             small: true,
           },
           {
             image:
-              'https://res.cloudinary.com/dtnvsv2dx/image/upload/v1706533950/e-commerce-pdp/image-product-4-thumbnail.jpg',
+              'https://res.cloudinary.com/dtnvsv2dx/image/upload/f_auto,q_auto/v1/e-commerce-pdp/image-product-4-thumbnail',
             alt: 'A shoe on a rock side view',
             small: true,
           },
           {
             image:
-              'https://res.cloudinary.com/dtnvsv2dx/image/upload/v1706533950/e-commerce-pdp/image-product-1.jpg',
+              'https://res.cloudinary.com/dtnvsv2dx/image/upload/f_auto,q_auto/v1/e-commerce-pdp/image-product-1',
+
             alt: 'Shoes top & bottom',
             small: false,
           },
           {
             image:
-              'https://res.cloudinary.com/dtnvsv2dx/image/upload/v1706533950/e-commerce-pdp/image-product-2.jpg',
+              'https://res.cloudinary.com/dtnvsv2dx/image/upload/f_auto,q_auto/v1/e-commerce-pdp/image-product-2',
             alt: 'Shoes on a rock',
             small: false,
           },
           {
             image:
-              'https://res.cloudinary.com/dtnvsv2dx/image/upload/v1706533950/e-commerce-pdp/image-product-3.jpg',
+              'https://res.cloudinary.com/dtnvsv2dx/image/upload/f_auto,q_auto/v1/e-commerce-pdp/image-product-3',
             alt: 'A shoe on a rock top view',
             small: false,
           },
           {
             image:
-              'https://res.cloudinary.com/dtnvsv2dx/image/upload/v1706533951/e-commerce-pdp/image-product-4.jpg',
+              'https://res.cloudinary.com/dtnvsv2dx/image/upload/f_auto,q_auto/v1/e-commerce-pdp/image-product-4',
             alt: 'A shoe on a rock side view',
             small: false,
           },

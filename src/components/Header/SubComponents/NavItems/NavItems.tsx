@@ -1,14 +1,15 @@
+import Link from 'next/link'
 import Style from './NavItems.module.scss'
-interface SidebarProps {
+interface NavItemsProps {
   navItems: string[]
 }
 
-const NavItems = ({ navItems }: SidebarProps) => {
+const NavItems = ({ navItems }: NavItemsProps) => {
   return (
-    <ul className={Style.nav}>
+    <ul className={Style['nav']}>
       {navItems.map((item: string) => (
-        <li className={Style.nav__item} key={item}>
-          {item}
+        <li className={Style['nav__item']} key={item}>
+          <Link href={`/#${item}`}>{item}</Link>
         </li>
       ))}
     </ul>

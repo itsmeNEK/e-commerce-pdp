@@ -1,0 +1,7 @@
+.product-images-container {
+  width: 100%;
+
+  @media screen and (min-width: 765px) {
+    width: 40%;
+  }
+}

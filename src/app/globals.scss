@@ -6,7 +6,20 @@ body {
   margin: 0;
   font-family: 'Kumbh Sans', sans-serif;
 }
+.wrapper {
+  display: block;
+  padding: 0;
+  margin: 0;
 
+  @media screen and (min-width: 765px) {
+    display: flex;
+    gap: 5rem;
+    max-width: 1200px;
+    margin: 4rem auto 0 auto;
+    padding: 0 3rem;
+    align-items: center;
+  }
+}
 a {
   color: inherit;
   text-decoration: none;

@@ -1,0 +1,23 @@
+.grid-images-container {
+  margin-top: 2rem;
+  position: relative;
+  gap: 1rem;
+
+  &__image {
+    position: relative;
+    height: 100%;
+    border-radius: 10px;
+    display: inline-block;
+    width: 20%;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    margin: 0 2.5%;
+
+    &--active,
+    &:hover {
+      border: 2px solid var(--orange);
+      cursor: pointer;
+      opacity: 0.7;
+    }
+  }
+}
