@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import Style from './CartCard.module.scss'
-import IconButton from '@/components/common/buttons/IconButton'
+import PrimaryButton from '@/components/common/buttons/PrimaryButton'
 import CartSvgIcon from '@/components/common/svg/CartSvgIcon'
 import { useCartContext } from '@/context/cartContext'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
@@ -23,7 +23,7 @@ export default function CartCard() {
   useClickOutside([cartCardRef, cartButtonRef], handleClickOutside)
   return (
     <>
-      <IconButton
+      <PrimaryButton
         ref={cartButtonRef}
         type='button'
         className={Style['cart-button']}
@@ -36,10 +36,10 @@ export default function CartCard() {
           </span>
         )}
         <CartSvgIcon aria-hidden />
-      </IconButton>
+      </PrimaryButton>
       {showCart && (
         <div
-          title='Cart Card'
+          data-testid='cart-card'
           ref={cartCardRef}
           className={`${Style['cart-card']} 
           ${isDesktop && Style['cart-card--desktop']}

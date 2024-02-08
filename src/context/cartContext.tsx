@@ -80,20 +80,21 @@ export function CartContextProvider({ children }: Props) {
       const exists = cartItems?.find(
         (item: TCartItems) => item.product.id === product.id
       )
-      if (exists) {
-        setCartItems((prevCartItems) =>
-          prevCartItems.map((item: TCartItems) =>
-            item.product.id === product.id
-              ? { ...item, quantity: Number(item.quantity) + quantity }
-              : item
-          )
-        )
-      } else {
+
+      if (!exists) {
         setCartItems((prevCartItems) => [
           ...prevCartItems,
           { product, quantity } as TCartItems,
         ])
+        return
       }
+      setCartItems((prevCartItems) =>
+        prevCartItems.map((item: TCartItems) =>
+          item.product.id === product.id
+            ? { ...item, quantity: Number(item.quantity) + quantity }
+            : item
+        )
+      )
     },
     [cartItems]
   )

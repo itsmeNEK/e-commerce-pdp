@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Style from './QuantityAddCart.module.scss'
-import IconButton from '@/components/common/buttons/IconButton'
 import PrimaryButton from '@/components/common/buttons/PrimaryButton'
 import CartSvgIcon from '@/components/common/svg/CartSvgIcon'
 import MinusSvgIcon from '@/components/common/svg/MinusSvgIcon'
@@ -32,28 +31,28 @@ export default function QuantityAddCart({
   return (
     <section className={Style['quantity-add']}>
       <div className={Style['quantity']}>
-        <IconButton
+        <PrimaryButton
           onClick={handleMinusQuantity}
           type='button'
           aria-label='Minus Button'
           className={Style['quantity__minus-plus-btn']}
         >
           <MinusSvgIcon aria-hidden />
-        </IconButton>
+        </PrimaryButton>
         <span aria-label='Quantity Count'>{quantity}</span>
-        <IconButton
+        <PrimaryButton
           onClick={handleAddQuantity}
           type='button'
           aria-label='Plus Button'
           className={Style['quantity__minus-plus-btn']}
         >
           <PlusSvgIcon aria-hidden />
-        </IconButton>
+        </PrimaryButton>
       </div>
       <PrimaryButton
         type='button'
         onClick={handleAddToCart}
-        aria-label='Add to cart'
+        aria-label={`Add ${quantity} products of ${product.title} to cart`}
         className={Style['quantity-add__add-button']}
       >
         <CartSvgIcon aria-hidden />

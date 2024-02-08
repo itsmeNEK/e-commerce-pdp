@@ -18,15 +18,18 @@ export default function ProductDetails() {
       {product.title && (
         <>
           <section className={Style['article__container']}>
-            <span className={Style['article__company']} title='Product Company'>
+            <span
+              className={Style['article__company']}
+              data-testid='product-company'
+            >
               {product.company}
             </span>
-            <h1 className={Style['article__title']} title='Product Title'>
+            <h1 className={Style['article__title']} data-testid='product-title'>
               {product.title}
             </h1>
             <p
               className={Style['article__description']}
-              title='Product Description'
+              data-testid='product-description'
             >
               {product.description}
             </p>

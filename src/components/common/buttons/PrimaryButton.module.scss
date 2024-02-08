@@ -1,16 +1,11 @@
 .primary-button {
-  background-color: var(--orange);
-  color: var(--white);
-  font-weight: 700;
-  border-radius: 10px;
+  background-color: transparent;
   border: none;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-
   &:hover {
-    opacity: 0.8;
     cursor: pointer;
   }
 }
