@@ -1,14 +1,15 @@
 import { useRef, useState } from 'react'
 import Style from './CartCard.module.scss'
-import IconButton from '@/components/common/buttons/IconButton'
+import PrimaryButton from '@/components/common/buttons/PrimaryButton'
 import CartSvgIcon from '@/components/common/svg/CartSvgIcon'
+import { useCartContext } from '@/context/cartContext'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { useClickOutside } from '@/hooks/useOnClickOutside'
 
 export default function CartCard() {
   const [showCart, setShowCart] = useState(false)
   const isDesktop = useMediaQuery(765)
-  const [cartCount] = useState<number>(0)
+  const { cartItems } = useCartContext()
   const cartCardRef = useRef<HTMLDivElement>(null)
   const cartButtonRef = useRef<HTMLButtonElement | null>(null)
 
@@ -22,20 +23,23 @@ export default function CartCard() {
   useClickOutside([cartCardRef, cartButtonRef], handleClickOutside)
   return (
     <>
-      <IconButton
+      <PrimaryButton
         ref={cartButtonRef}
         type='button'
         className={Style['cart-button']}
         aria-label='Cart Button'
         onClick={handleShowCart}
       >
-        {cartCount > 0 && (
-          <span className={Style['cart-button__count']}>{cartCount}</span>
+        {cartItems.length > 0 && (
+          <span className={Style['cart-button__count']}>
+            {cartItems.length}
+          </span>
         )}
         <CartSvgIcon aria-hidden />
-      </IconButton>
+      </PrimaryButton>
       {showCart && (
         <div
+          data-testid='cart-card'
           ref={cartCardRef}
           className={`${Style['cart-card']} 
           ${isDesktop && Style['cart-card--desktop']}
@@ -43,7 +47,7 @@ export default function CartCard() {
         >
           <span className={Style['cart-card__title']}>Cart</span>
           <div className={Style['cart-card__body']}>
-            {cartCount >= 1 ? (
+            {cartItems.length > 0 ? (
               <span>cart items</span>
             ) : (
               <span>Your cart is empty.</span>

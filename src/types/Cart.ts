@@ -19,7 +19,13 @@ export type TProduct = {
     alt: string
   }
 }
+export type TCartItems = {
+  product: TProduct
+  quantity: number
+}
 
 export type TCart = TImages & {
-  totalPrice?: number
+  product: TProduct
+  cartItems: TCartItems[]
+  addToCart: (product: TProduct, quantity: number) => void
 }

@@ -1,0 +1,44 @@
+.quantity-add {
+  display: block;
+  margin-top: 1rem;
+  gap: 1rem;
+  .quantity {
+    width: 100%;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--light-grayish-blue);
+    border-radius: 10px;
+  }
+  &__add-button {
+    background-color: var(--orange);
+    color: var(--white);
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    margin-top: 1rem;
+    width: 100%;
+    font-size: 15px;
+    box-shadow: 0px 25px 20px -20px var(--orange);
+    padding: 15px 0;
+    svg {
+      margin-right: 5px;
+      path {
+        fill: var(--white);
+      }
+    }
+  }
+
+  @media screen and (min-width: 765px) {
+    display: flex;
+    .quantity {
+      display: flex;
+      width: 40%;
+    }
+    &__add-button {
+      margin-top: 0;
+    }
+  }
+}

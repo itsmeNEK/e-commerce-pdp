@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React, { useRef, useState } from 'react'
 import Style from './Sidebar.module.scss'
-import IconButton from '@/components/common/buttons/IconButton'
+import PrimaryButton from '@/components/common/buttons/PrimaryButton'
 import CloseSvgIcon from '@/components/common/svg/CloseSvgIcon'
 import MenuIcon from '@/components/common/svg/MenuSvgIcon'
 import { useClickOutside } from '@/hooks/useOnClickOutside'
@@ -23,27 +23,28 @@ const Sidebar = ({ navItems }: SidebarProps) => {
   useClickOutside([closeButtonRef, sidebarRef], handleClickOutside)
   return (
     <aside className={Style['sidebar']}>
-      <IconButton
+      <PrimaryButton
         ref={closeButtonRef}
         type='button'
         onClick={handleButtonClick}
         aria-label='Menu Button'
       >
         <MenuIcon aria-hidden />
-      </IconButton>
+      </PrimaryButton>
       {showSidebar && <div className={Style['sidebar-overlay']}></div>}
       <div
+        data-testid='sidebar'
         className={`${Style['sidebar__container']} ${showSidebar && Style['menu-open']}`}
         ref={sidebarRef}
       >
-        <IconButton
+        <PrimaryButton
           type='button'
           className={Style['close-button']}
           onClick={handleButtonClick}
           aria-label='Close Button'
         >
           <CloseSvgIcon aria-hidden />
-        </IconButton>
+        </PrimaryButton>
         <ul>
           {navItems.map((item: string, index: number) => (
             <li key={index}>
