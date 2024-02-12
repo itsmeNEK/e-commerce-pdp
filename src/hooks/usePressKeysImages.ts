@@ -1,11 +1,14 @@
 import { useEffect, useCallback } from 'react'
 
-type Props = {
+type usePressKeysImagesProps = {
   keyPress: string
   handleChange: (val?: number | string) => void
 }
 
-const usePressKeysImages = ({ keyPress, handleChange }: Props) => {
+const usePressKeysImages = ({
+  keyPress,
+  handleChange,
+}: usePressKeysImagesProps) => {
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
       if (event.key === keyPress) {

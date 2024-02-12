@@ -29,15 +29,18 @@ const initialState: TCart = {
   addToCart: (product: TProduct, quantity: number) => {
     console.log(product, quantity)
   },
+  deleteToCart: (productId: number) => {
+    console.log(productId)
+  },
 }
 
 const CartContext = createContext<TCart>(initialState)
 
-type Props = {
+type CartContextProviderProps = {
   children: ReactNode
 }
 
-export function CartContextProvider({ children }: Props) {
+export function CartContextProvider({ children }: CartContextProviderProps) {
   const [smallImages, setSmallImages] = useState(initialState.smallImages)
   const [largeImages, setLargeImages] = useState(initialState.largeImages)
   const [product, setProduct] = useState(initialState.product)
@@ -80,7 +83,6 @@ export function CartContextProvider({ children }: Props) {
       const exists = cartItems?.find(
         (item: TCartItems) => item.product.id === product.id
       )
-
       if (!exists) {
         setCartItems((prevCartItems) => [
           ...prevCartItems,
@@ -98,6 +100,20 @@ export function CartContextProvider({ children }: Props) {
     },
     [cartItems]
   )
+  const deleteToCart = useCallback(
+    (productId: number) => {
+      const exists = cartItems.find(
+        (item: TCartItems) => item.product.id === productId
+      )
+      if (!exists) {
+        return
+      }
+      setCartItems(
+        cartItems.filter((item: TCartItems) => item.product.id !== product.id)
+      )
+    },
+    [cartItems, product.id]
+  )
 
   const contextValue = useMemo(
     () => ({
@@ -106,8 +122,9 @@ export function CartContextProvider({ children }: Props) {
       product,
       cartItems,
       addToCart,
+      deleteToCart,
     }),
-    [largeImages, smallImages, product, cartItems, addToCart]
+    [largeImages, smallImages, product, cartItems, addToCart, deleteToCart]
   )
   useEffect(() => {
     fetchProducts()
